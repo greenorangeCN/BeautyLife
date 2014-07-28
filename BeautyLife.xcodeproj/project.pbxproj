@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1445B8C91986269500C4417C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445B8C81986269500C4417C /* Foundation.framework */; };
+		1445B8CB1986269500C4417C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445B8CA1986269500C4417C /* CoreGraphics.framework */; };
+		1445B8CD1986269500C4417C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445B8CC1986269500C4417C /* UIKit.framework */; };
+		1445B8D31986269500C4417C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1445B8D11986269500C4417C /* InfoPlist.strings */; };
+		1445B8D51986269500C4417C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1445B8D41986269500C4417C /* main.m */; };
+		1445B8D91986269500C4417C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1445B8D81986269500C4417C /* AppDelegate.m */; };
+		1445B8DB1986269500C4417C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1445B8DA1986269500C4417C /* Images.xcassets */; };
+		1445B8E21986269500C4417C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445B8E11986269500C4417C /* XCTest.framework */; };
+		1445B8E31986269500C4417C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445B8C81986269500C4417C /* Foundation.framework */; };
+		1445B8E41986269500C4417C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445B8CC1986269500C4417C /* UIKit.framework */; };
+		1445B8EC1986269500C4417C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1445B8EA1986269500C4417C /* InfoPlist.strings */; };
+		1445B8EE1986269500C4417C /* BeautyLifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1445B8ED1986269500C4417C /* BeautyLifeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1445B8E51986269500C4417C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1445B8BD1986269500C4417C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1445B8C41986269500C4417C;
+			remoteInfo = BeautyLife;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1445B8C51986269500C4417C /* BeautyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1445B8C81986269500C4417C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1445B8CA1986269500C4417C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1445B8CC1986269500C4417C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1445B8D01986269500C4417C /* BeautyLife-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BeautyLife-Info.plist"; sourceTree = "<group>"; };
+		1445B8D21986269500C4417C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1445B8D41986269500C4417C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1445B8D61986269500C4417C /* BeautyLife-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BeautyLife-Prefix.pch"; sourceTree = "<group>"; };
+		1445B8D71986269500C4417C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1445B8D81986269500C4417C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1445B8DA1986269500C4417C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1445B8E01986269500C4417C /* BeautyLifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BeautyLifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1445B8E11986269500C4417C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1445B8E91986269500C4417C /* BeautyLifeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BeautyLifeTests-Info.plist"; sourceTree = "<group>"; };
+		1445B8EB1986269500C4417C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1445B8ED1986269500C4417C /* BeautyLifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BeautyLifeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1445B8C21986269500C4417C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1445B8CB1986269500C4417C /* CoreGraphics.framework in Frameworks */,
+				1445B8CD1986269500C4417C /* UIKit.framework in Frameworks */,
+				1445B8C91986269500C4417C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1445B8DD1986269500C4417C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1445B8E21986269500C4417C /* XCTest.framework in Frameworks */,
+				1445B8E41986269500C4417C /* UIKit.framework in Frameworks */,
+				1445B8E31986269500C4417C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1445B8BC1986269500C4417C = {
+			isa = PBXGroup;
+			children = (
+				1445B8CE1986269500C4417C /* BeautyLife */,
+				1445B8E71986269500C4417C /* BeautyLifeTests */,
+				1445B8C71986269500C4417C /* Frameworks */,
+				1445B8C61986269500C4417C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1445B8C61986269500C4417C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1445B8C51986269500C4417C /* BeautyLife.app */,
+				1445B8E01986269500C4417C /* BeautyLifeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1445B8C71986269500C4417C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1445B8C81986269500C4417C /* Foundation.framework */,
+				1445B8CA1986269500C4417C /* CoreGraphics.framework */,
+				1445B8CC1986269500C4417C /* UIKit.framework */,
+				1445B8E11986269500C4417C /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1445B8CE1986269500C4417C /* BeautyLife */ = {
+			isa = PBXGroup;
+			children = (
+				1445B8D71986269500C4417C /* AppDelegate.h */,
+				1445B8D81986269500C4417C /* AppDelegate.m */,
+				1445B8DA1986269500C4417C /* Images.xcassets */,
+				1445B8CF1986269500C4417C /* Supporting Files */,
+			);
+			path = BeautyLife;
+			sourceTree = "<group>";
+		};
+		1445B8CF1986269500C4417C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1445B8D01986269500C4417C /* BeautyLife-Info.plist */,
+				1445B8D11986269500C4417C /* InfoPlist.strings */,
+				1445B8D41986269500C4417C /* main.m */,
+				1445B8D61986269500C4417C /* BeautyLife-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1445B8E71986269500C4417C /* BeautyLifeTests */ = {
+			isa = PBXGroup;
+			children = (
+				1445B8ED1986269500C4417C /* BeautyLifeTests.m */,
+				1445B8E81986269500C4417C /* Supporting Files */,
+			);
+			path = BeautyLifeTests;
+			sourceTree = "<group>";
+		};
+		1445B8E81986269500C4417C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1445B8E91986269500C4417C /* BeautyLifeTests-Info.plist */,
+				1445B8EA1986269500C4417C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1445B8C41986269500C4417C /* BeautyLife */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1445B8F11986269500C4417C /* Build configuration list for PBXNativeTarget "BeautyLife" */;
+			buildPhases = (
+				1445B8C11986269500C4417C /* Sources */,
+				1445B8C21986269500C4417C /* Frameworks */,
+				1445B8C31986269500C4417C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BeautyLife;
+			productName = BeautyLife;
+			productReference = 1445B8C51986269500C4417C /* BeautyLife.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1445B8DF1986269500C4417C /* BeautyLifeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1445B8F41986269500C4417C /* Build configuration list for PBXNativeTarget "BeautyLifeTests" */;
+			buildPhases = (
+				1445B8DC1986269500C4417C /* Sources */,
+				1445B8DD1986269500C4417C /* Frameworks */,
+				1445B8DE1986269500C4417C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1445B8E61986269500C4417C /* PBXTargetDependency */,
+			);
+			name = BeautyLifeTests;
+			productName = BeautyLifeTests;
+			productReference = 1445B8E01986269500C4417C /* BeautyLifeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1445B8BD1986269500C4417C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Seven;
+				TargetAttributes = {
+					1445B8DF1986269500C4417C = {
+						TestTargetID = 1445B8C41986269500C4417C;
+					};
+				};
+			};
+			buildConfigurationList = 1445B8C01986269500C4417C /* Build configuration list for PBXProject "BeautyLife" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1445B8BC1986269500C4417C;
+			productRefGroup = 1445B8C61986269500C4417C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1445B8C41986269500C4417C /* BeautyLife */,
+				1445B8DF1986269500C4417C /* BeautyLifeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1445B8C31986269500C4417C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1445B8D31986269500C4417C /* InfoPlist.strings in Resources */,
+				1445B8DB1986269500C4417C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1445B8DE1986269500C4417C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1445B8EC1986269500C4417C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1445B8C11986269500C4417C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1445B8D91986269500C4417C /* AppDelegate.m in Sources */,
+				1445B8D51986269500C4417C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1445B8DC1986269500C4417C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1445B8EE1986269500C4417C /* BeautyLifeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1445B8E61986269500C4417C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1445B8C41986269500C4417C /* BeautyLife */;
+			targetProxy = 1445B8E51986269500C4417C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1445B8D11986269500C4417C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1445B8D21986269500C4417C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1445B8EA1986269500C4417C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1445B8EB1986269500C4417C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1445B8EF1986269500C4417C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1445B8F01986269500C4417C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1445B8F21986269500C4417C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeautyLife/BeautyLife-Prefix.pch";
+				INFOPLIST_FILE = "BeautyLife/BeautyLife-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1445B8F31986269500C4417C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeautyLife/BeautyLife-Prefix.pch";
+				INFOPLIST_FILE = "BeautyLife/BeautyLife-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1445B8F51986269500C4417C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BeautyLife.app/BeautyLife";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeautyLife/BeautyLife-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "BeautyLifeTests/BeautyLifeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1445B8F61986269500C4417C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BeautyLife.app/BeautyLife";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BeautyLife/BeautyLife-Prefix.pch";
+				INFOPLIST_FILE = "BeautyLifeTests/BeautyLifeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1445B8C01986269500C4417C /* Build configuration list for PBXProject "BeautyLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1445B8EF1986269500C4417C /* Debug */,
+				1445B8F01986269500C4417C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1445B8F11986269500C4417C /* Build configuration list for PBXNativeTarget "BeautyLife" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1445B8F21986269500C4417C /* Debug */,
+				1445B8F31986269500C4417C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1445B8F41986269500C4417C /* Build configuration list for PBXNativeTarget "BeautyLifeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1445B8F51986269500C4417C /* Debug */,
+				1445B8F61986269500C4417C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1445B8BD1986269500C4417C /* Project object */;
+}

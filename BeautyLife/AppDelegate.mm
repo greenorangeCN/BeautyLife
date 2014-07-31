@@ -9,11 +9,59 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize mainPage;
+@synthesize stewardPage;
+@synthesize lifePage;
+@synthesize settingPage;
+@synthesize tabBarController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //检查网络是否存在 如果不存在 则弹出提示
+    [UserModel Instance].isNetworkRunning = [CheckNetwork isExistenceNetwork];
+    //显示系统托盘
+    [application setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    //首页
+    self.mainPage = [[MainPageView alloc] initWithNibName:@"MainPageView" bundle:nil];
+    mainPage.tabBarItem.image = [UIImage imageNamed:@"tab_main"];
+    mainPage.tabBarItem.title = @"首页";
+    UINavigationController *mainPageNav = [[UINavigationController alloc] initWithRootViewController:self.mainPage];
+    //精管家
+    self.stewardPage = [[StewardPageView alloc] initWithNibName:@"StewardPageView" bundle:nil];
+    stewardPage.tabBarItem.image = [UIImage imageNamed:@"tab_steward"];
+    stewardPage.tabBarItem.title = @"精管家";
+    UINavigationController *stewardPageNav = [[UINavigationController alloc] initWithRootViewController:self.stewardPage];
+    //精管家
+    self.lifePage = [[LifePageView alloc] initWithNibName:@"LifePageView" bundle:nil];
+    lifePage.tabBarItem.image = [UIImage imageNamed:@"tab_life"];
+    lifePage.tabBarItem.title = @"美生活";
+    UINavigationController *lifePageNav = [[UINavigationController alloc] initWithRootViewController:self.lifePage];
+    //我
+    self.settingPage = [[SettingView alloc] initWithNibName:@"SettingView" bundle:nil];
+    settingPage.tabBarItem.image = [UIImage imageNamed:@"tab_my"];
+    settingPage.tabBarItem.title = @"我";
+    UINavigationController *settingPageNav = [[UINavigationController alloc] initWithRootViewController:self.settingPage];
+    
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.viewControllers = [NSArray arrayWithObjects:
+                                             mainPageNav,
+                                             stewardPageNav,
+                                             lifePageNav,
+                                             settingPageNav,
+                                             nil];
+    [[self.tabBarController tabBar] setSelectedImageTintColor:[UIColor colorWithRed:246.0/255 green:129.0/255 blue:33.0/255 alpha:1.0]];
+    //设置UINavigationController背景
+    if (IS_IOS7) {
+        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"top_bg7"]  forBarMetrics:UIBarMetricsDefault];
+    }
+    else
+    {
+        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"top_bg"]  forBarMetrics:UIBarMetricsDefault];
+//        [[self.tabBarController tabBar] setBackgroundImage:[UIImage imageNamed:@"tabbar_bg"]];
+    }
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    [self.window setRootViewController:self.tabBarController ];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

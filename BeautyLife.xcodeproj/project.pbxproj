@@ -46,6 +46,9 @@
 		142277E7198A1CC5007242A2 /* StewardFeeFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 142277E5198A1CC5007242A2 /* StewardFeeFrameView.m */; };
 		142277E8198A1CC5007242A2 /* StewardFeeFrameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 142277E6198A1CC5007242A2 /* StewardFeeFrameView.xib */; };
 		142277EA198A25FA007242A2 /* feeTypeBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 142277E9198A25FA007242A2 /* feeTypeBg.png */; };
+		1426246E198BEBBF00EA891F /* StewardFeeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1426246C198BEBBF00EA891F /* StewardFeeView.m */; };
+		1426246F198BEBBF00EA891F /* StewardFeeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1426246D198BEBBF00EA891F /* StewardFeeView.xib */; };
+		14262471198BEE0F00EA891F /* feelogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14262470198BEE0F00EA891F /* feelogo@2x.png */; };
 		1445B8C91986269500C4417C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445B8C81986269500C4417C /* Foundation.framework */; };
 		1445B8CB1986269500C4417C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445B8CA1986269500C4417C /* CoreGraphics.framework */; };
 		1445B8CD1986269500C4417C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445B8CC1986269500C4417C /* UIKit.framework */; };
@@ -294,6 +297,10 @@
 		142277E5198A1CC5007242A2 /* StewardFeeFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StewardFeeFrameView.m; sourceTree = "<group>"; };
 		142277E6198A1CC5007242A2 /* StewardFeeFrameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StewardFeeFrameView.xib; sourceTree = "<group>"; };
 		142277E9198A25FA007242A2 /* feeTypeBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feeTypeBg.png; sourceTree = "<group>"; };
+		1426246B198BEBBF00EA891F /* StewardFeeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StewardFeeView.h; sourceTree = "<group>"; };
+		1426246C198BEBBF00EA891F /* StewardFeeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StewardFeeView.m; sourceTree = "<group>"; };
+		1426246D198BEBBF00EA891F /* StewardFeeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StewardFeeView.xib; sourceTree = "<group>"; };
+		14262470198BEE0F00EA891F /* feelogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feelogo@2x.png"; sourceTree = "<group>"; };
 		1445B8C51986269500C4417C /* BeautyLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeautyLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1445B8C81986269500C4417C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1445B8CA1986269500C4417C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -710,8 +717,8 @@
 				1445BA2119862BE300C4417C /* libsqlite3.dylib in Frameworks */,
 				1445B8CB1986269500C4417C /* CoreGraphics.framework in Frameworks */,
 				1445B8CD1986269500C4417C /* UIKit.framework in Frameworks */,
-				1445B8C91986269500C4417C /* Foundation.framework in Frameworks */,
 				1445BA181986294A00C4417C /* KeyboardManager.framework in Frameworks */,
+				1445B8C91986269500C4417C /* Foundation.framework in Frameworks */,
 				1445BA9619862EE100C4417C /* AGCommon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1504,6 +1511,7 @@
 		149ED4A7198773170097F2AF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				14262470198BEE0F00EA891F /* feelogo@2x.png */,
 				142277E9198A25FA007242A2 /* feeTypeBg.png */,
 				142277E21989E637007242A2 /* areaBtnBg.png */,
 				142277E01989E2D3007242A2 /* arealine.png */,
@@ -1578,6 +1586,9 @@
 				142277E4198A1CC5007242A2 /* StewardFeeFrameView.h */,
 				142277E5198A1CC5007242A2 /* StewardFeeFrameView.m */,
 				142277E6198A1CC5007242A2 /* StewardFeeFrameView.xib */,
+				1426246B198BEBBF00EA891F /* StewardFeeView.h */,
+				1426246C198BEBBF00EA891F /* StewardFeeView.m */,
+				1426246D198BEBBF00EA891F /* StewardFeeView.xib */,
 			);
 			name = StewardPage;
 			sourceTree = "<group>";
@@ -1696,6 +1707,7 @@
 				149ED4BA19877BF30097F2AF /* parkpay@2x.png in Resources */,
 				149ED4B6198778440097F2AF /* praise@2x.png in Resources */,
 				1419F42819889CFB00D3E5E3 /* setting_propertyfee@2x.png in Resources */,
+				14262471198BEE0F00EA891F /* feelogo@2x.png in Resources */,
 				149ED4B1198776750097F2AF /* topimage.png in Resources */,
 				1419F4351988C67000D3E5E3 /* beautylifelogo@2x.png in Resources */,
 				1419F4391988D49F00D3E5E3 /* registerbtn@2x.png in Resources */,
@@ -1718,6 +1730,7 @@
 				14EF64271987E69F0006257D /* mainlogo@2x.png in Resources */,
 				149ED4C9198781750097F2AF /* tab_life@2x.png in Resources */,
 				1419F42919889CFB00D3E5E3 /* setting_parkfee@2x.png in Resources */,
+				1426246F198BEBBF00EA891F /* StewardFeeView.xib in Resources */,
 				149ED4BD19877CF30097F2AF /* repairs@2x.png in Resources */,
 				1419F42A19889CFB00D3E5E3 /* setting_mail@2x.png in Resources */,
 				142277EA198A25FA007242A2 /* feeTypeBg.png in Resources */,
@@ -1823,6 +1836,7 @@
 				1445B97E1986278A00C4417C /* MWPhoto.m in Sources */,
 				1445BB021986315C00C4417C /* JSONKit.m in Sources */,
 				1445B8FE1986276A00C4417C /* ZJSwitch.m in Sources */,
+				1426246E198BEBBF00EA891F /* StewardFeeView.m in Sources */,
 				1445BAFF1986315C00C4417C /* Base64.m in Sources */,
 				1445B9A8198627A400C4417C /* ASIInputStream.m in Sources */,
 				149ED4AC1987737D0097F2AF /* MainPageView.m in Sources */,
@@ -2002,6 +2016,8 @@
 					Framework,
 					"$(PROJECT_DIR)/BeautyLife/IQKeyboardManager",
 					Framework,
+					"$(PROJECT_DIR)/BeautyLife/IQKeyboardManager",
+					Framework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BeautyLife/BeautyLife-Prefix.pch";
@@ -2045,6 +2061,8 @@
 					"$(PROJECT_DIR)/BeautyLife/ShareSDK/Extend/QQConnectSDK",
 					"$(PROJECT_DIR)/BeautyLife/ShareSDK",
 					"$(PROJECT_DIR)/BeautyLife/ShareSDK/UI",
+					"$(PROJECT_DIR)/BeautyLife/IQKeyboardManager",
+					Framework,
 					"$(PROJECT_DIR)/BeautyLife/IQKeyboardManager",
 					Framework,
 					"$(PROJECT_DIR)/BeautyLife/IQKeyboardManager",

@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="494"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="HMR-nI-bgi">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" id="HMR-nI-bgi">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="494"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>

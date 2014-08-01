@@ -46,4 +46,8 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
+- (IBAction)stewardFeeAction:(id)sender {
+    StewardFeeFrameView *feeFrame = [[StewardFeeFrameView alloc] init];
+    [self.navigationController pushViewController:feeFrame animated:YES];
+}
 @end

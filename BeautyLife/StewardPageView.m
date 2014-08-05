@@ -50,4 +50,9 @@
     StewardFeeFrameView *feeFrame = [[StewardFeeFrameView alloc] init];
     [self.navigationController pushViewController:feeFrame animated:YES];
 }
+
+- (IBAction)repairsAction:(id)sender {
+    RepairsFrameView *repairsFrame = [[RepairsFrameView alloc] init];
+    [self.navigationController pushViewController:repairsFrame animated:YES];
+}
 @end

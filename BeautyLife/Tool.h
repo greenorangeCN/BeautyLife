@@ -32,7 +32,8 @@
 
 + (void)toTableViewBottom:(UITableView *)tableView isBottom:(BOOL)isBottom;
 
-+ (void)roundTextView:(UIView *)txtView;
++ (void)borderView:(UIView *)view;
++ (void)roundTextView:(UIView *)txtView andBorderWidth:(int)width andCornerRadius:(float)radius;
 + (void)roundView:(UIView *)view andCornerRadius:(float)radius;
 
 + (void)noticeLogin:(UIView *)view andDelegate:(id)delegate andTitle:(NSString *)title;

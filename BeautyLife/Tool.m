@@ -61,11 +61,19 @@
     return @"请先登录后发表评论";
 }
 
-+ (void)roundTextView:(UIView *)txtView
++ (void)borderView:(UIView *)view
 {
-    txtView.layer.borderColor = [[UIColor colorWithRed:235.0/255.0 green:235.0/255.0 blue:235.0/255.0 alpha:1.0] CGColor];
-    txtView.layer.borderWidth = 1;
-    txtView.layer.cornerRadius = 6.0;
+    view.layer.borderColor = [[UIColor colorWithRed:230.0/255.0 green:230.0/255.0 blue:230.0/255.0 alpha:1.0] CGColor];
+    view.layer.borderWidth = 1;
+    view.layer.masksToBounds = YES;
+    view.clipsToBounds = YES;
+}
+
++ (void)roundTextView:(UIView *)txtView andBorderWidth:(int)width andCornerRadius:(float)radius
+{
+    txtView.layer.borderColor = [[UIColor colorWithRed:179.0/255.0 green:179.0/255.0 blue:179.0/255.0 alpha:1.0] CGColor];
+    txtView.layer.borderWidth = width;
+    txtView.layer.cornerRadius = radius;
     txtView.layer.masksToBounds = YES;
     txtView.clipsToBounds = YES;
 }

@@ -1,18 +1,18 @@
 //
-//  StewardFeeFrameView.m
+//  RepairsFrameView.m
 //  BeautyLife
 //
-//  Created by Seven on 14-7-31.
+//  Created by Seven on 14-8-2.
 //  Copyright (c) 2014年 Seven. All rights reserved.
 //
 
-#import "StewardFeeFrameView.h"
+#import "RepairsFrameView.h"
 
-@interface StewardFeeFrameView ()
+@interface RepairsFrameView ()
 
 @end
 
-@implementation StewardFeeFrameView
+@implementation RepairsFrameView
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -20,7 +20,7 @@
     if (self) {
         UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
         titleLabel.font = [UIFont boldSystemFontOfSize:18];
-        titleLabel.text = @"美世界 美生活";
+        titleLabel.text = @"投诉报修";
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.textColor = [UIColor whiteColor];
         titleLabel.textAlignment = UITextAlignmentCenter;
@@ -39,17 +39,34 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //下属控件初始化
-    self.stewardView = [[StewardFeeView alloc] init];
-    self.parkView = [[ParkFeeView alloc] init];
-    self.parkView.view.hidden = YES;
-    [self addChildViewController:self.parkView];
-    [self addChildViewController:self.stewardView];
-    [self.mainView addSubview:self.parkView.view];
-    [self.mainView addSubview:self.stewardView.view];
+    self.repairsView = [[RepairsFormView alloc] init];
+    self.myRepairsView = [[MyRepairsView alloc] init];
+    self.myRepairsView.view.hidden = YES;
+    [self addChildViewController:self.repairsView];
+    [self addChildViewController:self.myRepairsView];
+    [self.mainView addSubview:self.repairsView.view];
+    [self.mainView addSubview:self.myRepairsView.view];
+}
+
+- (IBAction)repairsAction:(id)sender
+{
+    [self.repairsBtn setTitleColor:[UIColor colorWithRed:255.0/255.0 green:127.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    [self.myRepairsBtn setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
+    self.repairsView.view.hidden = NO;
+    self.myRepairsView.view.hidden = YES;
+}
+
+- (IBAction)myRepairsAction:(id)sender
+{
+    [self.repairsBtn setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
+    [self.myRepairsBtn setTitleColor:[UIColor colorWithRed:255.0/255.0 green:127.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+    self.repairsView.view.hidden = YES;
+    self.myRepairsView.view.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,24 +81,4 @@
     self.navigationController.navigationBar.hidden = NO;
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    self.stewardView = nil;
-    self.parkView = nil;
-}
-
-- (IBAction)stewardFeeAction:(id)sender {
-    [self.stewardFeeBtn setTitleColor:[UIColor colorWithRed:255.0/255.0 green:127.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateNormal];
-    [self.parkFeeBtn setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
-    self.stewardView.view.hidden = NO;
-    self.parkView.view.hidden = YES;
-}
-
-- (IBAction)parkFeeAction:(id)sender {
-    [self.parkFeeBtn setTitleColor:[UIColor colorWithRed:255.0/255.0 green:127.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateNormal];
-    [self.stewardFeeBtn setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
-    self.stewardView.view.hidden = YES;
-    self.parkView.view.hidden = NO;
-}
 @end

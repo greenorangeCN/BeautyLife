@@ -1,21 +1,18 @@
 //
-//  StewardFeeView.m
+//  ParkFeeView.m
 //  BeautyLife
 //
-//  Created by Seven on 14-8-1.
+//  Created by Seven on 14-8-2.
 //  Copyright (c) 2014年 Seven. All rights reserved.
 //
 
-#import "StewardFeeView.h"
+#import "ParkFeeView.h"
 
-@interface StewardFeeView ()
+@interface ParkFeeView ()
 
 @end
 
-@implementation StewardFeeView
-
-@synthesize scrollView;
-@synthesize bgView;
+@implementation ParkFeeView
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

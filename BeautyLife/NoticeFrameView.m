@@ -1,21 +1,18 @@
 //
-//  StewardFeeView.m
+//  NoticeFrameView.m
 //  BeautyLife
 //
-//  Created by Seven on 14-8-1.
+//  Created by Seven on 14-8-5.
 //  Copyright (c) 2014年 Seven. All rights reserved.
 //
 
-#import "StewardFeeView.h"
+#import "NoticeFrameView.h"
 
-@interface StewardFeeView ()
+@interface NoticeFrameView ()
 
 @end
 
-@implementation StewardFeeView
-
-@synthesize scrollView;
-@synthesize bgView;
+@implementation NoticeFrameView
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,8 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Tool roundView:self.bgView andCornerRadius:3.0];
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, self.view.frame.size.height);
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

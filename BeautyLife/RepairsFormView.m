@@ -1,21 +1,18 @@
 //
-//  StewardFeeView.m
+//  RepairsFormView.m
 //  BeautyLife
 //
-//  Created by Seven on 14-8-1.
+//  Created by Seven on 14-8-2.
 //  Copyright (c) 2014年 Seven. All rights reserved.
 //
 
-#import "StewardFeeView.h"
+#import "RepairsFormView.h"
 
-@interface StewardFeeView ()
+@interface RepairsFormView ()
 
 @end
 
-@implementation StewardFeeView
-
-@synthesize scrollView;
-@synthesize bgView;
+@implementation RepairsFormView
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,7 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [super viewDidLoad];
     [Tool roundView:self.bgView andCornerRadius:3.0];
+    [Tool roundTextView:self.descTv andBorderWidth:1 andCornerRadius:4.0];
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, self.view.frame.size.height);
 }
 

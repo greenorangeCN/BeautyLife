@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "StewardFeeFrameView.h"
+#import "RepairsFrameView.h"
 
 @interface StewardPageView : UIViewController
 
@@ -16,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *telBg;
 
 - (IBAction)stewardFeeAction:(id)sender;
+- (IBAction)repairsAction:(id)sender;
 
 @end

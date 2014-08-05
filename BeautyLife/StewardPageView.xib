@@ -82,6 +82,9 @@
                                     <state key="normal" image="repairs.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
+                                    <connections>
+                                        <action selector="repairsAction:" destination="-1" eventType="touchUpInside" id="Ae2-69-oJQ"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投诉报修" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bpk-hg-r3W">
                                     <rect key="frame" x="221" y="106" width="59" height="21"/>

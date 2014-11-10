@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RegisterView.h"
-#import "UserInfoView.h"
+#import "StewardFeeView.h"
+#import "ParkFeeView.h"
 
 @interface StewardFeeFrameView : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIView *mainView;
+@property (strong, nonatomic) StewardFeeView * stewardView;
+@property (strong, nonatomic) ParkFeeView * parkView;
 
-@property (strong, nonatomic) RegisterView * msgView;
-@property (strong, nonatomic) UserInfoView * activesView;
+@property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (strong, nonatomic) IBOutlet UIButton *stewardFeeBtn;
 @property (strong, nonatomic) IBOutlet UIButton *parkFeeBtn;
 

@@ -7,7 +7,10 @@
 //
 
 #import "SettingView.h"
-
+#import "FeeHistoryView.h"
+#import "MyOrderView.h"
+#import "MobClick.h"
+#import "MyCouponView.h"
 
 @implementation SettingView
 @synthesize tableSettings;
@@ -39,17 +42,21 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    
     if (!IS_IOS7) {
         [self.tableSettings setBackgroundColor:[Tool getBackgroundColor]];
     }
 
+    [self initSettingData];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refresh) name:Notification_RefreshSetting object:nil];
+}
+
+- (void)initSettingData
+{
+    bool islogin = [[UserModel Instance] isLogin];
     self.settingsInSection = [[NSMutableDictionary alloc] initWithCapacity:3];
     NSArray *first = [[NSArray alloc] initWithObjects:
                       [[SettingModel alloc] initWith:@"注册" andImg:@"setting_register" andTag:1 andTitle2:nil],
-                      [[SettingModel alloc] initWith: @"登录" andImg:@"setting_login" andTag:2 andTitle2:nil],
+                      [[SettingModel alloc] initWith: islogin?@"注销":@"登录" andImg:islogin?@"setting_logout":@"setting_login" andTag:2 andTitle2:nil],
                       [[SettingModel alloc] initWith: @"个人信息" andImg:@"setting_info" andTag:3 andTitle2:nil],
                       [[SettingModel alloc] initWith: @"修改密码" andImg:@"setting_update" andTag:4 andTitle2:nil],
                       nil];
@@ -58,18 +65,23 @@
                        [[SettingModel alloc] initWith:@"我的物业费" andImg:@"setting_propertyfee" andTag:6 andTitle2:nil],
                        [[SettingModel alloc] initWith:@"我的停车费" andImg:@"setting_parkfee" andTag:7 andTitle2:nil],
                        [[SettingModel alloc] initWith:@"我的寄件箱" andImg:@"setting_mail" andTag:8 andTitle2:nil],
-                       [[SettingModel alloc] initWith:@"我的收藏" andImg:@"setting_collect" andTag:9 andTitle2:nil],
+                       [[SettingModel alloc] initWith:@"我的优惠券" andImg:@"setting_collect" andTag:9 andTitle2:nil],
                        nil];
     NSArray *third = [[NSArray alloc] initWithObjects:
                       [[SettingModel alloc] initWith:@"版本更新" andImg:@"setting_update" andTag:10 andTitle2:nil],
                       [[SettingModel alloc] initWith:@"推送消息" andImg:@"setting_push" andTag:11 andTitle2:nil],
-                      [[SettingModel alloc] initWith:@"注销" andImg:@"setting_logout" andTag:12 andTitle2:nil],
                       nil];
+    
+    [self.settingsInSection setObject:first forKey:@"帐号"];
+    [self.settingsInSection setObject:third forKey:@"设置"];
+    [self.settingsInSection setObject:second forKey:@"我的"];
+    self.settings = [[NSArray alloc] initWithObjects:@"帐号",@"我的",@"设置",nil];
+}
 
-        [self.settingsInSection setObject:first forKey:@"帐号"];
-        [self.settingsInSection setObject:third forKey:@"设置"];
-        [self.settingsInSection setObject:second forKey:@"我的"];
-        self.settings = [[NSArray alloc] initWithObjects:@"帐号",@"我的",@"设置",nil];
+- (void)refresh
+{
+    [self initSettingData];
+    [tableSettings reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -96,6 +108,11 @@
     switch (action.tag) {
         case 1:
         {
+            if ([[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"您已登录，请先注销登录" andView:self.view andImage:@"" andAfterDelay:2];
+                return;
+            }
             RegisterView *registerView = [[RegisterView alloc] init];
             registerView.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:registerView animated:YES];
@@ -103,11 +120,28 @@
             break;
         case 2:
         {
-
+            if ([[UserModel Instance] isLogin]) {
+                [ASIHTTPRequest setSessionCookies:nil];
+                [ASIHTTPRequest clearSession];
+                [[UserModel Instance] saveIsLogin:NO];
+                [self refresh];
+                [Tool showCustomHUD:@"注销成功" andView:self.view andImage:@"37x-Checkmark.png" andAfterDelay:2];
+            }
+            else
+            {
+                LoginView *loginView = [[LoginView alloc] init];
+                loginView.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:loginView animated:YES];
+            }
         }
             break;
         case 3:
         {
+            if (![[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"请先登录" andView:self.view andImage:@"37x-Failure.png" andAfterDelay:2];
+                return;
+            }
             UserInfoView *userinfoView = [[UserInfoView alloc] init];
             userinfoView.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:userinfoView animated:YES];
@@ -115,33 +149,103 @@
             break;
         case 4:
         {
-            ChooseAreaView *chooseView = [[ChooseAreaView alloc] init];
-            chooseView.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:chooseView animated:YES];
+            if (![[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"请先登录" andView:self.view andImage:@"37x-Failure.png" andAfterDelay:2];
+                return;
+            }
+            ChangPWDView *changeView = [[ChangPWDView alloc] init];
+            changeView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:changeView animated:YES];
         }
             break;
         case 5:
         {
-
+            if (![[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"请先登录" andView:self.view andImage:@"37x-Failure.png" andAfterDelay:2];
+                return;
+            }
+            MyOrderView *myOrderView = [[MyOrderView alloc] init];
+            myOrderView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:myOrderView animated:YES];
+//            ShoppingCartView *myOrderView = [[ShoppingCartView alloc] init];
+//            myOrderView.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:myOrderView animated:YES];
         }
             break;
         case 6:
         {
-            
+            if (![[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"请先登录" andView:self.view andImage:@"37x-Failure.png" andAfterDelay:2];
+                return;
+            }
+            FeeHistoryView *feeHistoryView = [[FeeHistoryView alloc] init];
+            feeHistoryView.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:feeHistoryView animated:YES];
         }
             break;
         case 7:
         {
-
+            if (![[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"请先登录" andView:self.view andImage:@"37x-Failure.png" andAfterDelay:2];
+                return;
+            }
+            FeeHistoryView *feeHistoryView = [[FeeHistoryView alloc] init];
+            feeHistoryView.hidesBottomBarWhenPushed = YES;
+            feeHistoryView.isShowPark = YES;
+            [self.navigationController pushViewController:feeHistoryView animated:YES];
         }
             break;
         case 8:
         {
-
+            if (![[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"请先登录" andView:self.view andImage:@"37x-Failure.png" andAfterDelay:2];
+                return;
+            }
+            MySendExpressView *mySendExpress = [[MySendExpressView alloc] init];
+            mySendExpress.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:mySendExpress animated:YES];
         }
+            break;
         case 9:
         {
-
+            if (![[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"请先登录" andView:self.view andImage:@"37x-Failure.png" andAfterDelay:2];
+                return;
+            }
+            MyCouponView *myCoupon = [[MyCouponView alloc] init];
+            myCoupon.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:myCoupon animated:YES];
+        }
+            break;
+        case 10:
+        {
+            
+        }
+            break;
+        case 11:
+        {
+            
+        }
+            break;
+        case 12:
+        {
+            if (![[UserModel Instance] isLogin])
+            {
+                [Tool showCustomHUD:@"请先登录" andView:self.view andImage:@"37x-Failure.png" andAfterDelay:2];
+            }
+            else
+            {
+                [ASIHTTPRequest setSessionCookies:nil];
+                [ASIHTTPRequest clearSession];
+                [[UserModel Instance] saveIsLogin:NO];
+                [Tool showCustomHUD:@"注销成功" andView:self.view andImage:@"37x-Checkmark.png" andAfterDelay:2];
+            }
         }
             break;
         default:
@@ -226,6 +330,11 @@
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [MobClick beginLogPageView:@"SettingView"];
 }
-
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"SettingView"];
+}
 @end

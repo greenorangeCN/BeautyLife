@@ -7,6 +7,7 @@
 //
 
 #import "StewardFeeFrameView.h"
+#import "MobClick.h"
 
 @interface StewardFeeFrameView ()
 
@@ -43,13 +44,15 @@
 {
     [super viewDidLoad];
     //下属控件初始化
-    self.activesView = [[UserInfoView alloc] init];
-    self.msgView = [[RegisterView alloc] init];
-    self.msgView.view.hidden = YES;
-    [self addChildViewController:self.activesView];
-    [self addChildViewController:self.msgView];
-    [self.mainView addSubview:self.activesView.view];
-    [self.mainView addSubview:self.msgView.view];
+    self.stewardView = [[StewardFeeView alloc] init];
+    self.stewardView.parentView = self.view;
+    self.parkView = [[ParkFeeView alloc] init];
+    self.parkView.parentView = self.view;
+    self.parkView.view.hidden = YES;
+    [self addChildViewController:self.parkView];
+    [self addChildViewController:self.stewardView];
+    [self.mainView addSubview:self.parkView.view];
+    [self.mainView addSubview:self.stewardView.view];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,26 +65,35 @@
 {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = NO;
+    [MobClick beginLogPageView:@"StewardFeeFrameView"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"StewardFeeFrameView"];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    self.msgView = nil;
-    self.activesView = nil;
+    self.stewardView = nil;
+    self.parkView = nil;
 }
 
 - (IBAction)stewardFeeAction:(id)sender {
     [self.stewardFeeBtn setTitleColor:[UIColor colorWithRed:255.0/255.0 green:127.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     [self.parkFeeBtn setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
-    self.activesView.view.hidden = NO;
-    self.msgView.view.hidden = YES;
+    self.stewardView.view.hidden = NO;
+    self.parkView.view.hidden = YES;
 }
 
 - (IBAction)parkFeeAction:(id)sender {
     [self.parkFeeBtn setTitleColor:[UIColor colorWithRed:255.0/255.0 green:127.0/255.0 blue:0.0/255.0 alpha:1.0] forState:UIControlStateNormal];
     [self.stewardFeeBtn setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
-    self.activesView.view.hidden = YES;
-    self.msgView.view.hidden = NO;
+    self.stewardView.view.hidden = YES;
+    self.parkView.view.hidden = NO;
+    //如无停车费则提示
+//    [[NSNotificationCenter defaultCenter] postNotificationName:Notification_ShowPackAlertView object:nil];
 }
 @end

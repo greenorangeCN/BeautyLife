@@ -14,6 +14,34 @@
 #import <CommonCrypto/CommonCryptor.h>
 #import "RMMapper.h"
 #import <ShareSDK/ShareSDK.h>
+#import "LoginView.h"
+#import "RegisterView.h"
+#import "User.h"
+#import "ProvinceModel.h"
+#import "CityModel.h"
+#import "RegionModel.h"
+#import "CommunityModel.h"
+#import "BuildModel.h"
+#import "HouseModel.h"
+#import "Advertisement.h"
+#import "News.h"
+#import "RepairsCate.h"
+#import "RepairsList.h"
+#import "RepairsItem.h"
+#import "PropertyFeeInfo.h"
+#import "CarFeeInfo.h"
+#import "AlipayInfo.h"
+#import "OutExpress.h"
+#import "Shop.h"
+#import "ShopsCate.h"
+#import "BusinessGoods.h"
+#import "Coupons.h"
+#import "Goods.h"
+#import "OrdersNum.h"
+#import "FeeHistory.h"
+#import "MyOrder.h"
+#import "ResponseCode.h"
+#import "OnlineLink.h"
 
 @interface Tool : NSObject
 
@@ -32,7 +60,8 @@
 
 + (void)toTableViewBottom:(UITableView *)tableView isBottom:(BOOL)isBottom;
 
-+ (void)roundTextView:(UIView *)txtView;
++ (void)borderView:(UIView *)view;
++ (void)roundTextView:(UIView *)txtView andBorderWidth:(int)width andCornerRadius:(float)radius;
 + (void)roundView:(UIView *)view andCornerRadius:(float)radius;
 
 + (void)noticeLogin:(UIView *)view andDelegate:(id)delegate andTitle:(NSString *)title;
@@ -88,6 +117,36 @@
 
 + (void)saveCache:(NSString *)catalog andType:(int)type andID:(int)_id andString:(NSString *)str;
 + (NSString *)getCache:(NSString *)catalog andType:(int)type andID:(int)_id;
+//保留数值几位小数
++ (NSString *)notRounding:(float)price afterPoint:(int)position;
 + (void)shareAction:(UIButton *)sender andShowView:(UIView *)view andContent:(NSDictionary *)shareContent;
+
++ (NSString *)databasePath;
+
++ (User *)readJsonStrToUser:(NSString *)str;
++ (AlipayInfo *)readJsonStrToAliPay:(NSString *)str;
++ (NSMutableArray *)readJsonStrToRegionArray:(NSString *)str;
++ (NSMutableArray *)readJsonStrToCommunityArray:(NSString *)str;
++ (NSMutableArray *)readJsonStrToADV:(NSString *)str;
++ (NSMutableArray *)readJsonStrToNews:(NSString *)str;
++ (NSMutableArray *)readJsonStrToRepairsCate:(NSString *)str;
++ (NSMutableArray *)readJsonStrToMyRepairs:(NSString *)str;
++ (NSMutableArray *)readJsonStrToRepairItems:(NSString *)str;
++ (PropertyFeeInfo *)readJsonStrToPropertyFeeInfo:(NSString *)str;
++ (NSMutableArray *)readJsonStrToPropertyCarFeeInfo:(NSString *)str;
++ (NSMutableArray *)readJsonStrToMyOutBox:(NSString *)str;
++ (NSMutableArray *)readJsonStrToShopArray:(NSString *)str;
++ (NSMutableArray *)readJsonStrToShopsCate:(NSString *)str;
++ (BusinessGoods *)readJsonStrBusinessGoods:(NSString *)str;
++ (ResponseCode *)readJsonStrToResponseCode:(NSString *)str;
++ (NSMutableArray *)readJsonStrToMyOrder:(NSString *)str;
++ (OrdersNum *)readJsonStrToOrdersNum:(NSString *)str;
++ (Goods *)readJsonStrToGoodsInfo:(NSString *)str;
++ (Coupons *)readJsonStrToCouponDetail:(NSString *)str;
++ (NSMutableArray *)readJsonStrToGoodsArray:(NSString *)str;
++ (Shop *)readJsonStrToShopInfo:(NSString *)str;
++ (NSMutableArray *)readJsonStrToFeeHistory:(NSString *)str;
++ (NSMutableArray *)readJsonStrToMyCouponArray:(NSString *)str;
++ (NSMutableArray *)readJsonStrToLinksArray:(NSString *)str;
 
 @end
